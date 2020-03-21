@@ -1,0 +1,41 @@
+---
+title: "Estimating Pi with R"
+author: "Khatna Bold"
+date: "3/20/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+Some basic R and tidyverse practice for a midterm: we use the good ol' "generate a bunch of points" strategy. `generate_points(n)` samples n random points in $[-1,1]\times[-1,1]$, and calculates the distances to origin. It also marks if the point falls in the unit circle.
+
+```{r}
+generate.points <- function(n) {
+  points.x <- replicate(n, runif(1, min=-1, max=1))
+  points.y <- replicate(n, runif(1, min=-1, max=1))
+  
+  points <- data.frame(points.x, points.y) %>% 
+    mutate(dist = sqrt(points.x ** 2 + points.y ** 2)) %>%
+    mutate(in.circle = dist <= 1)
+  
+  points
+}
+
+points <- generate.points(10000)
+```
+
+## Visualization
+
+```{r pressure, echo=FALSE}
+ggplot(data = points,
+       mapping=aes(x=points.x, y=points.y, color=in.circle)) +
+  geom_point(alpha=0.4) +
+  coord_fixed() +
+  labs(x = 'x', y = 'y',
+       title = paste('Estimated pi = ', mean(points$in.circle) * 4))
+```
