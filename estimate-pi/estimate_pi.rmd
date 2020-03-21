@@ -28,9 +28,6 @@ generate.points <- function(n) {
 
 points <- generate.points(10000)
 ```
-
-## Visualization
-
 ```{r pressure, echo=FALSE}
 ggplot(data = points,
        mapping=aes(x=points.x, y=points.y, color=in.circle)) +
