@@ -3,8 +3,8 @@ title: "Estimating Pi with R"
 author: "Khatna Bold"
 date: "3/20/2020"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -29,10 +29,11 @@ generate.points <- function(n) {
 points <- generate.points(10000)
 ```
 ```{r pressure, echo=FALSE}
-ggplot(data = points,
-       mapping=aes(x=points.x, y=points.y, color=in.circle)) +
+ggplot(data = points, mapping=aes(x=points.x, y=points.y, color=in.circle)) +
   geom_point(alpha=0.4) +
   coord_fixed() +
   labs(x = 'x', y = 'y',
        title = paste('Estimated pi = ', mean(points$in.circle) * 4))
+
+ggsave('./pi.png', dpi=300)
 ```
