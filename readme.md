@@ -6,7 +6,7 @@ But it's ok. Here are a few notebooks containing cool (subjective) things I'm do
 1. Handwritten digit recognition (MNIST):
     * [Beginner: k-nearest neighbors](./ml/knn-mnist/knn-mnist.ipynb)
     * [Intermediate: multiple logistic regression with stochastic gradient descent](./ml/lr-mnist/mnist-lr-mc.ipynb) 
-2. [Predicting housing prices in Boston - GLM Gradient descent: linear Regression](./ml/glm-lr/glm-lr.ipynb)
+2. [Predicting housing prices in Boston - Linear Regression with gradient descent](./ml/glm-lr/glm-lr.ipynb)
 3. [Using a Fourier basis with linear regression to model periodic data](./ml/periodic/periodic.ipynb)
 4. [Basics of building a NN with Keras - classifying fashion items](./ml/keras-fashion/fashion.ipynb)
 
