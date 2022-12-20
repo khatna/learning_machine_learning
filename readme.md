@@ -1,6 +1,3 @@
-## Late to the ML party
-But it's ok. Here are a few notebooks containing cool (subjective) things I'm doing with Python & NumPy.
-
 ### Algorithm Implementations
 
 1. Handwritten digit recognition (MNIST):
